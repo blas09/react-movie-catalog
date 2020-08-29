@@ -3,6 +3,7 @@ import { movies } from '../constants'
 const initialState = {
     movies: [],
     starFilter: 0,
+    selectedMovie: null,
     searchText: '',
     genres: [],
 }

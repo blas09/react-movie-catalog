@@ -1,12 +1,16 @@
 import React from "react";
 import Header from "./Header";
 import {useSelector} from "react-redux";
-import {useHistory} from "react-router-dom";
+import {Redirect, useHistory} from "react-router-dom";
 
 const Movie = () => {
     const movie = useSelector(state => state.movies.selectedMovie);
     const genres = useSelector(state => state.movies.genres);
     const history = useHistory();
+
+    if (null === movie) {
+        return <Redirect to='/' />
+    }
 
     return (
         <section className="hero is-fullheight is-default is-bold">
