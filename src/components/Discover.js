@@ -31,7 +31,7 @@ const Discover = () => {
 
                                 return (
                                     <div className="column is-4 has-text-centered" key={movie.id}>
-                                        <div onClick={redirectHandler}>{img}</div>
+                                        <a onClick={redirectHandler}>{img}</a>
                                     </div>
                                 );
                             })
