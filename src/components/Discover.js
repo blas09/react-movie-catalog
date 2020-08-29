@@ -19,7 +19,7 @@ const Discover = () => {
 
                         return (
                             <div className="column is-4 has-text-centered" key={movie.id}>
-                                <a href="/">{img}</a>
+                                <a href="#">{img}</a>
                             </div>
                         );
                     })

@@ -12,7 +12,7 @@ const Header = () => {
     return (
         <nav className="navbar" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
-                <a className="navbar-item" href="/">
+                <a className="navbar-item" href="#">
                     <h1 className="title">MOVIE THEATER</h1>
                 </a>
             </div>
