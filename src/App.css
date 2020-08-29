@@ -25,3 +25,9 @@
 .movie-preview img {
     cursor: pointer;
 }
+
+@media (max-width: 1023px) {
+    .is-input-centered {
+        display: inline-flex !important;
+    }
+}

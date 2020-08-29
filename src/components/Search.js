@@ -23,19 +23,19 @@ const Search = () => {
 
     return (
         <div className="navbar-item">
-            <div className="field has-addons">
-                <p className="control has-icons-left has-icons-right">
+            <div className="field has-addons is-input-centered">
+                <div className="control has-icons-left">
                     <input className="input" type="text" placeholder="Search" onChange={searchHandler} value={searchText} />
                     <span className="icon is-small is-left">
                         <i className="fa fa-search"></i>
                     </span>
-                </p>
+                </div>
                 <div className="control">
-                    <button className="button is-info" onClick={deleteSearchTextHandler} disabled={searchText.trim() === ''}>
+                    <a className="button is-info" onClick={deleteSearchTextHandler}>
                         <span className="icon is-small is-left">
                             <i className="fa fa-trash"></i>
                         </span>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
