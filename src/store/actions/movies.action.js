@@ -1,7 +1,17 @@
 import { movies } from '../constants'
 import axios from 'axios';
 
+let cancelToken;
+
 const searchMovies = (query = '') => {
+    //Cancel previous pending requests
+    if (typeof cancelToken !== typeof undefined) {
+        cancelToken.cancel("Operation canceled due to new request.");
+    }
+
+    //Save the cancel token for the current request
+    cancelToken = axios.CancelToken.source();
+
     const apiKey = process.env.REACT_APP_MOVIE_API_KEY;
     const apiBaseUrl = process.env.REACT_APP_MOVIE_APP_BASEURL;
 
@@ -13,7 +23,7 @@ const searchMovies = (query = '') => {
         }
 
         axios
-            .get(apiUrl)
+            .get(apiUrl, { cancelToken: cancelToken.token })
             .then(res => {
                 dispatch(setMovies(res.data.results));
             });
