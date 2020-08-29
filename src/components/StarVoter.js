@@ -3,13 +3,9 @@ import Star from "./Star";
 
 const StarVoter = () => {
     return (
-        <div>
-            <Star numberStars={1} />
-            <Star numberStars={2} />
-            <Star numberStars={3} />
-            <Star numberStars={4} />
-            <Star numberStars={5} />
-        </div>
+        <>
+            { [...Array(5).keys()].map(n => <Star numberStars={n +1} key={n + 1} />)}
+        </>
     );
 }
 

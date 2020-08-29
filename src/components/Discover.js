@@ -2,6 +2,7 @@ import React from "react";
 import {useSelector} from "react-redux";
 import MovieImageNotFound from "./MovieImageNotFound";
 import {BrowserRouter as Router, useHistory} from "react-router-dom";
+import Header from "./Header";
 
 const Discover = () => {
     const movies = useSelector(state => state.movies.movies);
@@ -15,6 +16,7 @@ const Discover = () => {
 
     return (
         <Router>
+            <Header />
             <div className="Discover">
                 <div className="columns is-multiline">
                     {
@@ -31,7 +33,7 @@ const Discover = () => {
 
                                 return (
                                     <div className="column is-4 has-text-centered" key={movie.id}>
-                                        <a onClick={redirectHandler}>{img}</a>
+                                        <div onClick={redirectHandler}>{img}</div>
                                     </div>
                                 );
                             })
