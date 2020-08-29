@@ -38,7 +38,12 @@ const setStarFilter = (stars) => {
     return { type: movies.SET_STAR_FILTER, starFilter: stars}
 }
 
+const setSelectedMovie = (selectedMovie) => {
+    return { type: movies.SET_SELECTED_MOVIE, selectedMovie }
+}
+
 export default {
     searchMovies,
     setStarFilter,
+    setSelectedMovie,
 }

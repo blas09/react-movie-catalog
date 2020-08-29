@@ -1,9 +1,9 @@
 import React from "react";
 
-const Detail = (props) => {
+const Movie = () => {
     return (
         <div>Details</div>
     );
 }
 
-export default Detail;
+export default Movie;
