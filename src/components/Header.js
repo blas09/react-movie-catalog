@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { movies as moviesActions } from '../store/actions';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -10,25 +11,27 @@ const Header = () => {
     }
 
     return (
-        <nav className="navbar" role="navigation" aria-label="main navigation">
-            <div className="navbar-brand">
-                <a className="navbar-item" href="#">
-                    <h1 className="title">MOVIE THEATER</h1>
-                </a>
-            </div>
-            <div className="navbar-end">
-                <div className="navbar-item">
-                    <div className="field">
-                        <p className="control has-icons-left has-icons-right">
-                            <input className="input" type="text" placeholder="Search" onChange={searchHandler} />
-                            <span className="icon is-small is-left">
+        <Router>
+            <nav className="navbar" role="navigation" aria-label="main navigation">
+                <div className="navbar-brand">
+                    <Link className="navbar-item" to="/">
+                        <h1 className="title">MOVIE THEATER</h1>
+                    </Link>
+                </div>
+                <div className="navbar-end">
+                    <div className="navbar-item">
+                        <div className="field">
+                            <p className="control has-icons-left has-icons-right">
+                                <input className="input" type="text" placeholder="Search" onChange={searchHandler} />
+                                <span className="icon is-small is-left">
                                 <i className="fa fa-search"></i>
                             </span>
-                        </p>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </Router>
     );
 }
 
