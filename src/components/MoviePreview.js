@@ -18,7 +18,7 @@ const MoviePreview = ({movie}) => {
         ? <MovieImage movie={movie} redirectHandler={redirectHandler} />
         : <MovieImageNotFound movie={movie} redirectHandler={redirectHandler} />;
 
-    return <div className="column is-4 has-text-centered" key={movie.id}>{img}</div>;
+    return <div className="column is-4 has-text-centered movie-preview" key={movie.id}>{img}</div>;
 }
 
 export default MoviePreview;

@@ -10,6 +10,7 @@
     width: 300px;
     height: 169px;
     margin: auto;
+    cursor: pointer;
 }
 
 .star-voter {
@@ -19,4 +20,8 @@
 
 .star-voter.clicked {
     color: goldenrod;
+}
+
+.movie-preview img {
+    cursor: pointer;
 }
