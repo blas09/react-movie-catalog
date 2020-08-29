@@ -12,6 +12,7 @@ function App() {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        dispatch(moviesActions.searchGenres());
         dispatch(moviesActions.searchMovies());
     }, []);
 

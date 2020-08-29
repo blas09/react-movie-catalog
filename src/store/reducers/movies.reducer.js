@@ -4,6 +4,7 @@ const initialState = {
     movies: [],
     starFilter: 0,
     searchText: '',
+    genres: [],
 }
 
 export default (state = initialState, action) => {
@@ -14,6 +15,8 @@ export default (state = initialState, action) => {
             return { ...state, starFilter: action.starFilter }
         case movies.SET_SELECTED_MOVIE:
             return { ...state, selectedMovie: action.selectedMovie }
+        case movies.SET_GENRES:
+            return { ...state, genres: action.genres }
         default:
             return { ...state }
     }

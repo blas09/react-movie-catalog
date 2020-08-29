@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom';
 import StarVoter from "./StarVoter";
 import Search from "./Search";
 
-const Header = () => {
+const Header = (props) => {
     const history = useHistory();
 
     return (
@@ -15,12 +15,17 @@ const Header = () => {
             </div>
             <div className="navbar-menu">
                 <div className="navbar-end">
-                    <StarVoter />
-                    <Search />
+                    {props.showStarsFilter ? <StarVoter /> : null}
+                    {props.showSearchInput ? <Search /> : null}
                 </div>
             </div>
         </nav>
     );
 }
+
+Header.defaultProps = {
+    showSearchInput: true,
+    showStarsFilter: true,
+};
 
 export default Header;
