@@ -1,23 +1,26 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { movies as moviesActions } from '../store/actions';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import {BrowserRouter as Router, Link, useHistory} from 'react-router-dom';
 import StarVoter from "./StarVoter";
 
 const Header = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const searchHandler = (event) => {
         dispatch(moviesActions.searchMovies(event.target.value));
     }
 
+    const redirectHandler = () => history.push('/');
+
     return (
         <Router>
             <nav className="navbar" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
-                    <Link className="navbar-item" to="/">
+                    <a className="navbar-item" onClick={redirectHandler}>
                         <h1 className="title">MOVIE THEATER</h1>
-                    </Link>
+                    </a>
                 </div>
                 <div className="navbar-menu">
                     <div className="navbar-start">

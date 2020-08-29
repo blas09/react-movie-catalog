@@ -7,6 +7,7 @@ import {useDispatch} from "react-redux";
 import {movies as moviesActions} from './store/actions';
 import 'bulma/css/bulma.css';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import Detail from "./components/Detail";
 
 function App() {
     const dispatch = useDispatch();
@@ -21,6 +22,7 @@ function App() {
                 <Header />
                 <Switch>
                     <Route exact path='/' component={Discover} />
+                    <Route exact path='/detail' component={Detail} />
                 </Switch>
             </section>
         </Router>
