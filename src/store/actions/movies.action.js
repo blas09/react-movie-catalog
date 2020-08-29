@@ -24,6 +24,11 @@ const setMovies = (data) => {
     return { type: movies.SET_MOVIES, movies: data }
 }
 
+const setStarFilter = (stars) => {
+    return { type: movies.SET_STAR_FILTER, starFilter: stars}
+}
+
 export default {
     searchMovies,
+    setStarFilter,
 }

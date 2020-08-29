@@ -11,3 +11,11 @@
     height: 169px;
     margin: auto;
 }
+
+.star-voter {
+    width: 2rem !important;
+}
+
+.star-voter.clicked {
+    color: goldenrod;
+}
