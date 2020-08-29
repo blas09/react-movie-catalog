@@ -7,6 +7,7 @@ import {movies as moviesActions} from './store/actions';
 import 'bulma/css/bulma.css';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Movie from "./components/Movie";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
     const dispatch = useDispatch();
@@ -18,6 +19,7 @@ function App() {
 
     return (
         <Router>
+            <ScrollToTop />
             <section className="App section">
                 <Switch>
                     <Route exact path='/' component={Discover} />
