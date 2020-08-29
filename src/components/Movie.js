@@ -21,32 +21,26 @@ const Movie = () => {
                 <div className="container has-text-centered">
                     <div className="columns is-vcentered">
                         <div className="column is-5">
-                            <div className="card" style={{boxShadow: 'none'}}>
-                                <div className="card-image">
-                                    <img src={movie.poster_path} />
+
+                            <img src={movie.poster_path} /><br /><br />
+
+                            <div className="field is-grouped is-grouped-multiline" style={{justifyContent: 'center'}}>
+                                <div className="control">
+                                    <div className="tags has-addons">
+                                        <span className="tag is-dark">Popularity</span>
+                                        <span className="tag is-success">{movie.popularity.toFixed(1)}</span>
+                                    </div>
                                 </div>
-                                <div className="card-content">
-                                    <div className="content">
-                                        <div className="field is-grouped is-grouped-multiline" style={{display: 'inline-flex'}}>
-                                            <div className="control">
-                                                <div className="tags has-addons">
-                                                    <span className="tag is-dark">Popularity</span>
-                                                    <span className="tag is-success">{movie.popularity.toFixed(1)}</span>
-                                                </div>
-                                            </div>
-                                            <div className="control">
-                                                <div className="tags has-addons">
-                                                    <span className="tag is-dark">Stars</span>
-                                                    <span className="tag is-warning">{movie.vote_average.toFixed(1)}</span>
-                                                </div>
-                                            </div>
-                                            <div className="control">
-                                                <div className="tags has-addons">
-                                                    <span className="tag is-dark">Language</span>
-                                                    <span className="tag is-primary">{movie.original_language}</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div className="control">
+                                    <div className="tags has-addons">
+                                        <span className="tag is-dark">Stars</span>
+                                        <span className="tag is-warning">{movie.vote_average.toFixed(1)}</span>
+                                    </div>
+                                </div>
+                                <div className="control">
+                                    <div className="tags has-addons">
+                                        <span className="tag is-dark">Language</span>
+                                        <span className="tag is-primary">{movie.original_language}</span>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +53,7 @@ const Movie = () => {
                                 </div>
                             </article>
 
-                            <div className="tags has-text-centered" style={{display: 'block'}}>
+                            <div className="tags has-text-centered" style={{justifyContent: 'center'}}>
                                 {movie.genre_ids.map(genre => {
                                     const movieGenre = genres.filter(movieGenre => movieGenre.id === genre);
                                     return <span className="tag is-danger" key={movieGenre[0].id}>{movieGenre[0].name}</span>;
