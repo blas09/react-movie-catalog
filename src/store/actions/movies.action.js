@@ -25,13 +25,13 @@ const searchMovies = (query = '') => {
         axios
             .get(apiUrl, { cancelToken: cancelToken.token })
             .then(res => {
-                dispatch(setMovies(res.data.results));
+                dispatch(setMovies(res.data.results, query));
             });
     };
 }
 
-const setMovies = (data) => {
-    return { type: movies.SET_MOVIES, movies: data }
+const setMovies = (data, searchText) => {
+    return { type: movies.SET_MOVIES, movies: data, searchText }
 }
 
 const setStarFilter = (stars) => {

@@ -5,7 +5,7 @@ const MovieImageNotFound = (props) => {
         <div className="card MovieImageNotFound" onClick={props.redirectHandler}>
             <div className="card-content">
                 <p className="subtitle has-text-centered">{props.movie.title}</p>
-                <p className="subtitle">{props.movie.average}</p>
+                <p className="subtitle">{props.movie.vote_average}</p>
             </div>
         </div>
     );
