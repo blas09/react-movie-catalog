@@ -12,6 +12,10 @@ const Movie = () => {
         return <Redirect to='/' />
     }
 
+    const content = null !== movie.poster_path ?
+        <img src={movie.poster_path} /> :
+        <h2 className="subtitle">Image not available</h2>;
+
     return (
         <section className="hero is-fullheight is-default is-bold">
             <div className="hero-head">
@@ -22,7 +26,7 @@ const Movie = () => {
                     <div className="columns is-vcentered">
                         <div className="column is-5">
 
-                            <img src={movie.poster_path} /><br /><br />
+                            {content}<br /><br />
 
                             <div className="field is-grouped is-grouped-multiline" style={{justifyContent: 'center'}}>
                                 <div className="control">
@@ -49,7 +53,7 @@ const Movie = () => {
                             <h1 className="title is-3">{movie.title}</h1>
                             <article className="message is-medium">
                                 <div className="message-body has-text-justified">
-                                    {movie.overview}
+                                    {null !== movie.overview ? movie.overview : 'Description not available'}
                                 </div>
                             </article>
 
